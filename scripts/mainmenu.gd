@@ -1,5 +1,6 @@
 extends Control
 func _on_exit_pressed() -> void:
+	MusicManager.stop_music()
 	get_tree().quit()
 
 
