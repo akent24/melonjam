@@ -1,3 +1,17 @@
 [gd_scene format=3 uid="uid://c6r0wucnu311y"]
 
-[node name="Main Hero" type="Node2D" unique_id=539965912]
+[ext_resource type="Script" uid="uid://1qe4b17avt4m" path="res://scenes/main_hero.gd" id="1_5ryay"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=65108906]
+script = ExtResource("1_5ryay")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1283509031]
+position = Vector2(160, 90)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=881094301]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
