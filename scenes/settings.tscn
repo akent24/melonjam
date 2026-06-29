@@ -55,4 +55,5 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Back"
 
+[connection signal="value_changed" from="TextureRect/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/Button" to="." method="_on_button_pressed"]
