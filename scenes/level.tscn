@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://nlh05lqmvnw"]
+[gd_scene format=4 uid="uid://nlh05lqmvnw"]
 
 [ext_resource type="Texture2D" uid="uid://dxit3742vpyou" path="res://assets/sprites/decor_location.png" id="1_2q6dc"]
+[ext_resource type="PackedScene" uid="uid://c6r0wucnu311y" path="res://scenes/main_hero.tscn" id="2_w7c3h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7c3h"]
 texture = ExtResource("1_2q6dc")
 texture_region_size = Vector2i(8, 8)
-0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -35,12 +35,46 @@ texture_region_size = Vector2i(8, 8)
 14:5/0 = 0
 15:5/0 = 0
 6:0/0 = 0
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 
 [sub_resource type="TileSet" id="TileSet_d0u6y"]
 tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_priority = 0.92
 sources/0 = SubResource("TileSetAtlasSource_w7c3h")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2q6dc"]
+texture = ExtResource("1_2q6dc")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+7:1/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+7:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3gngh"]
+sources/0 = SubResource("TileSetAtlasSource_2q6dc")
 
 [node name="level" type="Node2D" unique_id=1709560737]
 
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=2053650227]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=886941992]
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1736151699]
+tile_map_data = PackedByteArray("AAD5/xEAAAAAAAAAAAD6/xEAAAAAAAAAAAD7/xEAAAAAAAAAAAD8/xEAAAAAAAAAAAD9/xEAAAAAAAAAAAD+/xEAAAAAAAAAAAD//xEAAAAAAAAAAAAAABEAAAAAAAAAAAABABEAAAAAAAAAAAACABEAAAAAAAAAAAADABEAAAAAAAAAAAAEABEAAAAAAAAAAAAFABEAAAAAAAAAAAAGABEAAAAAAAAAAAAHABEAAAAAAAAAAAAIABEAAAAAAAAAAAAJABEAAAAAAAAAAAAKABEAAAAAAAAAAAALABEAAAAAAAAAAAAMABEAAAAAAAAAAAANABEAAAAAAAAAAAAOABIAAAAAAAAAAAAPABIAAAAAAAAAAAAQABIAAAAAAAAAAAARABIAAAAAAAAAAAASABIAAAAAAAAAAAATABIAAAAAAAAAAAAUABIAAAAAAAAAAAAVABIAAAAAAAAAAAAWABIAAAAAAAAAAAAXABIAAAAAAAAAAAAYABIAAAAAAAAAAAAZABIAAAAAAAAAAAAaABIAAAAAAAAAAAAbABIAAAAAAAAAAAAcABIAAAAAAAAAAAAdABIAAAAAAAAAAAAeABIAAAAAAAAAAAAfABIAAAAAAAAAAAAgABMAAAAAAAAAAAAhABMAAAAAAAAAAAAiABMAAAAAAAAAAAAjABMAAAAAAAAAAAAkABMAAAAAAAAAAAAlABMAAAAAAAAAAAAmABMAAAAAAAAAAAAnABMAAAAAAAAAAAAoABMAAAAAAAAAAAApABMAAAAAAAAAAAAqABMAAAAAAAAAAAArABMAAAAAAAAAAAAsABMAAAAAAAAAAAAtABMAAAAAAAAAAAAuABQAAAAAAAAAAAAvABQAAAAAAAAAAAAwABQAAAAAAAAAAAAxABQAAAAAAAAAAAAyABQAAAAAAAAAAAAzABQAAAAAAAAAAAA0ABQAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_d0u6y")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=2057317379]
+tile_set = SubResource("TileSet_3gngh")
+
+[node name="CharacterBody2D" parent="." unique_id=65108906 instance=ExtResource("2_w7c3h")]
+position = Vector2(-144, 32)
