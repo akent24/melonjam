@@ -3,18 +3,26 @@
 [ext_resource type="Script" uid="uid://1qe4b17avt4m" path="res://scripts/main_hero.gd" id="1_5ryay"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(20, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_g4v7s"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=65108906]
 script = ExtResource("1_5ryay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1283509031]
-position = Vector2(160, 90)
+position = Vector2(160, 92)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=881094301]
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=646755071]
-position = Vector2(160, 90)
+position = Vector2(160, 88)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1499595299]
+position = Vector2(160, 92)
+scale = Vector2(24.739395, 24)
+texture = SubResource("PlaceholderTexture2D_g4v7s")
