@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
 
-const SPEED = 200.0
-const JUMP_VELOCITY = -300.0
-
+const SPEED = 70.0
+const JUMP_VELOCITY = -200.0
+var player_stats = { "player_hp": 7, 
+}
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * 0.5 * delta
 		$AnimatedSprite2D.play("jamp")
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -27,3 +27,12 @@ func _physics_process(delta: float) -> void:
 		else:
 			$AnimatedSprite2D.play("walk")
 	move_and_slide()
+
+func attak() -> void:
+	if Input.is_action_just_pressed("attak"):
+		$Area2D/AnimatedSprite2D.visible = true
+		$Area2D/AnimatedSprite2D.play("attak")
+		$Area2D/CollisionShape2D.disabled = false
+		
+func get_damage() -> void:
+	pass

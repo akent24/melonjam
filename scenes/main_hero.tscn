@@ -1,10 +1,50 @@
 [gd_scene format=3 uid="uid://c6r0wucnu311y"]
 
 [ext_resource type="Script" uid="uid://1qe4b17avt4m" path="res://scripts/main_hero.gd" id="1_5ryay"]
+[ext_resource type="Texture2D" uid="uid://uond32vwucq1" path="res://assets/sprites/attak.png" id="2_4tc0a"]
 [ext_resource type="Texture2D" uid="uid://c2d8fqs3ydb66" path="res://assets/sprites/hero-attak.png" id="2_lrk6v"]
 [ext_resource type="Texture2D" uid="uid://bcjjpjndsob0m" path="res://assets/sprites/hero-idle.png" id="2_y2obu"]
 [ext_resource type="Texture2D" uid="uid://cbd5uauw5h4pu" path="res://assets/sprites/hero-jamp.png" id="4_4tc0a"]
 [ext_resource type="Texture2D" uid="uid://dlji72yv1wbp3" path="res://assets/sprites/hero-walk.png" id="5_u50qc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u50qc"]
+atlas = ExtResource("2_4tc0a")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ac7t"]
+atlas = ExtResource("2_4tc0a")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajaod"]
+atlas = ExtResource("2_4tc0a")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k47ui"]
+atlas = ExtResource("2_4tc0a")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u50qc")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_4ac7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajaod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k47ui")
+}],
+"loop": 1,
+"name": &"attak",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(25.160599, 18.08081)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(5.325, 13.5)
@@ -146,6 +186,24 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=65108906]
 script = ExtResource("1_5ryay")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1075785764]
+position = Vector2(151, 89)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=626030797]
+visible = false
+position = Vector2(1.1444092e-05, 7.6293945e-06)
+scale = Vector2(0.99999994, 0.99999994)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"attak"
+frame_progress = 0.49982336
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=913671072]
+position = Vector2(0.72402954, 0.47499847)
+rotation = -3.1415925
+scale = Vector2(0.455, 0.495)
+shape = SubResource("RectangleShape2D_yf5fn")
+disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1283509031]
 position = Vector2(160.4, 89.225)
