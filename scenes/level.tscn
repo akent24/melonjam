@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dxit3742vpyou" path="res://assets/sprites/decor_location.png" id="1_2q6dc"]
 [ext_resource type="PackedScene" uid="uid://c6r0wucnu311y" path="res://scenes/main_hero.tscn" id="2_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://clpvcsdfmbuh" path="res://scenes/UI.tscn" id="3_w8frs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w8frs"]
 texture = ExtResource("1_2q6dc")
@@ -105,3 +106,5 @@ tile_set = SubResource("TileSet_g4v7s")
 
 [node name="CharacterBody2D" parent="." unique_id=65108906 instance=ExtResource("2_w7c3h")]
 position = Vector2(-56, 128)
+
+[node name="UI" parent="." unique_id=1818658930 instance=ExtResource("3_w8frs")]

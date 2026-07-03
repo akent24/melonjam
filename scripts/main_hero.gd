@@ -1,19 +1,25 @@
 extends CharacterBody2D
-
-
+@onready var UI = $"../UI"
 const SPEED = 70.0
 const JUMP_VELOCITY = -200.0
-var player_stats = { "player_hp": 7, 
+var player_stats = { "player_hp": 7, "attak_damage": 40, 
 }
+var dash_fill_amount := 0.0
+var dash_cooldown := 0.0
 var is_attacking := false
 func _physics_process(delta: float) -> void:
+	if dash_cooldown > 0.0:
+		dash_cooldown -= delta
+		if dash_cooldown <= 0.0:
+			dash_cooldown = 0.0
 	if not is_on_floor():
 		velocity += get_gravity() * 0.5 * delta
-		$AnimatedSprite2D.play("jamp")
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		if is_attacking == false:
+			$AnimatedSprite2D.play("jamp")
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and is_attacking == false:
 		velocity.y = JUMP_VELOCITY
 	var direction := Input.get_axis("move_left", "move_right")
-	if direction:
+	if direction and is_attacking == false:
 		velocity.x = direction * SPEED
 		if direction < 0:
 			$AnimatedSprite2D.flip_h = false
@@ -30,6 +36,10 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("idle")
 		else:
 			$AnimatedSprite2D.play("walk")
+		if Input.is_action_just_pressed("dash") and dash_cooldown == 0.0:
+			dash_cooldown = 3.0
+			UI.get_node("Dash").frame = 1
+		
 	move_and_slide()
 	attak()
 
@@ -42,8 +52,8 @@ func attak() -> void:
 		$Area2D/CollisionShape2D.disabled = false
 		
 func get_damage() -> void:
-	pass
-
+	player_stats["player_hp"] -= 1
+	
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	$Area2D/AnimatedSprite2D.visible = false

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b8bb2arqnjc64"]
+
+[ext_resource type="Texture2D" uid="uid://dcfoxhxwsjate" path="res://assets/sprites/hp.png" id="1_mvrql"]
+[ext_resource type="Texture2D" uid="uid://b6fwj0mxelf4" path="res://assets/sprites/hp_orb2.png" id="2_jbxta"]
+[ext_resource type="Texture2D" uid="uid://bd63yhqrg0kat" path="res://assets/sprites/hp_orb1.png" id="3_6okdh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_57qmd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mvrql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jbxta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6okdh")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1320991527]
+sprite_frames = SubResource("SpriteFrames_57qmd")

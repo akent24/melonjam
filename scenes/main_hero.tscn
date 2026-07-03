@@ -40,7 +40,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"attak",
-"speed": 10.0
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
@@ -119,7 +119,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_48krb")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_rdcmj")
 }, {
 "duration": 1.0,
@@ -130,7 +130,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"attak",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
