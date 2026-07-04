@@ -2,14 +2,27 @@ extends CharacterBody2D
 @onready var UI = $"../UI"
 const SPEED = 70.0
 const JUMP_VELOCITY = -200.0
+const DASH_SPEED = 200.0
 var player_stats = { "player_hp": 7, "attak_damage": 40, 
 }
 var dash_fill_amount := 0.0
 var dash_cooldown := 0.0
 var is_attacking := false
+var dash_timer := 0.2
 func _physics_process(delta: float) -> void:
+	if dash_timer > 0.0:
+		dash_timer -= delta
+		if $AnimatedSprite2D.flip_h == false:
+			velocity.x = -DASH_SPEED
+		else:
+			velocity.x = DASH_SPEED
+		velocity.y = 0
+		move_and_slide()
+		return
 	if dash_cooldown > 0.0:
 		dash_cooldown -= delta
+		var current_frame = int((3.0 - dash_cooldown) / 3.0 * 10)
+		UI.get_node("Dash").frame = current_frame
 		if dash_cooldown <= 0.0:
 			dash_cooldown = 0.0
 	if not is_on_floor():
@@ -36,10 +49,9 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("idle")
 		else:
 			$AnimatedSprite2D.play("walk")
-		if Input.is_action_just_pressed("dash") and dash_cooldown == 0.0:
-			dash_cooldown = 3.0
-			UI.get_node("Dash").frame = 1
-		
+	if Input.is_action_just_pressed("dash") and dash_cooldown == 0.0:
+		$AnimatedSprite2D.play("dash")
+		dash_cooldown = 3.0
 	move_and_slide()
 	attak()
 

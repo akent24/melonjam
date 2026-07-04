@@ -1,8 +1,210 @@
 [gd_scene format=3 uid="uid://cjkpa8bqje5vn"]
 
+[ext_resource type="Texture2D" uid="uid://dm5qac211t20i" path="res://assets/sprites/zombe_attak.png" id="1_ycv6i"]
+[ext_resource type="Texture2D" uid="uid://bbh1orxob0fe3" path="res://assets/sprites/zombe_dead.png" id="2_pjjxt"]
+[ext_resource type="Texture2D" uid="uid://dyf6sfjyvsvnm" path="res://assets/sprites/zombe_idle.png" id="3_7pfmu"]
+[ext_resource type="Texture2D" uid="uid://de2dnpgo78y1g" path="res://assets/sprites/zombe_walk.png" id="4_3fthk"]
+[ext_resource type="Texture2D" uid="uid://clrcpra82ljmt" path="res://assets/sprites/zombattak.png" id="5_aetfh"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(11, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjlcg"]
+atlas = ExtResource("1_ycv6i")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iblsu"]
+atlas = ExtResource("1_ycv6i")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ida1p"]
+atlas = ExtResource("1_ycv6i")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6hpf"]
+atlas = ExtResource("1_ycv6i")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eskk2"]
+atlas = ExtResource("2_pjjxt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_us5qj"]
+atlas = ExtResource("2_pjjxt")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtb48"]
+atlas = ExtResource("2_pjjxt")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f78au"]
+atlas = ExtResource("2_pjjxt")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ncdm"]
+atlas = ExtResource("3_7pfmu")
+region = Rect2(0, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxyu1"]
+atlas = ExtResource("3_7pfmu")
+region = Rect2(12, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fsw7"]
+atlas = ExtResource("3_7pfmu")
+region = Rect2(24, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nid1"]
+atlas = ExtResource("3_7pfmu")
+region = Rect2(36, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyb12"]
+atlas = ExtResource("4_3fthk")
+region = Rect2(0, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oscyj"]
+atlas = ExtResource("4_3fthk")
+region = Rect2(12, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnsdx"]
+atlas = ExtResource("4_3fthk")
+region = Rect2(24, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_118du"]
+atlas = ExtResource("4_3fthk")
+region = Rect2(36, 0, 12, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjlcg")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_iblsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ida1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6hpf")
+}],
+"loop": 1,
+"name": &"attak",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eskk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_us5qj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtb48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f78au")
+}],
+"loop": 1,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ncdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxyu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fsw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nid1")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyb12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oscyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnsdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_118du")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(9, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6vye"]
+atlas = ExtResource("5_aetfh")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul64k"]
+atlas = ExtResource("5_aetfh")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujrmm"]
+atlas = ExtResource("5_aetfh")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kr53x"]
+atlas = ExtResource("5_aetfh")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6vye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ul64k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujrmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kr53x")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1177770066 groups=["enemy"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=483218603]
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1897560488]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"attak"
+frame = 2
+frame_progress = 0.7993133
+
+[node name="Area2D" type="Area2D" parent="." unique_id=817110778]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=778893527]
+position = Vector2(-9.235, -0.08)
+scale = Vector2(0.94, 1)
+shape = SubResource("RectangleShape2D_yf5fn")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=1604279713]
+position = Vector2(-9.485, 0)
+sprite_frames = SubResource("SpriteFrames_yf5fn")
+frame = 2
+frame_progress = 0.31626555

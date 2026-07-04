@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://c2d8fqs3ydb66" path="res://assets/sprites/hero-attak.png" id="2_lrk6v"]
 [ext_resource type="Texture2D" uid="uid://bcjjpjndsob0m" path="res://assets/sprites/hero-idle.png" id="2_y2obu"]
 [ext_resource type="Texture2D" uid="uid://cbd5uauw5h4pu" path="res://assets/sprites/hero-jamp.png" id="4_4tc0a"]
-[ext_resource type="Texture2D" uid="uid://cl8g2qohx85gg" path="res://assets/sprites/hero_rool.png" id="4_u50qc"]
 [ext_resource type="Texture2D" uid="uid://dlji72yv1wbp3" path="res://assets/sprites/hero-walk.png" id="5_u50qc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u50qc"]
@@ -65,22 +64,6 @@ region = Rect2(24, 0, 12, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_odhlk"]
 atlas = ExtResource("2_lrk6v")
 region = Rect2(36, 0, 12, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_egwu5"]
-atlas = ExtResource("4_u50qc")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vw1i1"]
-atlas = ExtResource("4_u50qc")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sr2wh"]
-atlas = ExtResource("4_u50qc")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_siqv6"]
-atlas = ExtResource("4_u50qc")
-region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hxxdw"]
 atlas = ExtResource("2_y2obu")
@@ -148,23 +131,6 @@ animations = [{
 "loop": 1,
 "name": &"attak",
 "speed": 15.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_egwu5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vw1i1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sr2wh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_siqv6")
-}],
-"loop": 1,
-"name": &"dash",
-"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -243,7 +209,7 @@ shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=881094301]
 sprite_frames = SubResource("SpriteFrames_5ryay")
-animation = &"dash"
+animation = &"attak"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=646755071]
 offset = Vector2(-0.01, 1.995)
