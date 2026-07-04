@@ -8,13 +8,13 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_mvrql")
+"texture": ExtResource("3_6okdh")
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_jbxta")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_6okdh")
+"texture": ExtResource("1_mvrql")
 }],
 "loop": 1,
 "name": &"default",

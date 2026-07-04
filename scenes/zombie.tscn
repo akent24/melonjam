@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cjkpa8bqje5vn"]
 
+[ext_resource type="Script" uid="uid://dlr4dd4rxhn5r" path="res://scenes/zombie.gd" id="1_pjjxt"]
 [ext_resource type="Texture2D" uid="uid://dm5qac211t20i" path="res://assets/sprites/zombe_attak.png" id="1_ycv6i"]
 [ext_resource type="Texture2D" uid="uid://bbh1orxob0fe3" path="res://assets/sprites/zombe_dead.png" id="2_pjjxt"]
 [ext_resource type="Texture2D" uid="uid://dyf6sfjyvsvnm" path="res://assets/sprites/zombe_idle.png" id="3_7pfmu"]
@@ -184,6 +185,7 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1177770066 groups=["enemy"]]
+script = ExtResource("1_pjjxt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=483218603]
 position = Vector2(0.5, 0)
@@ -208,3 +210,5 @@ position = Vector2(-9.485, 0)
 sprite_frames = SubResource("SpriteFrames_yf5fn")
 frame = 2
 frame_progress = 0.31626555
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

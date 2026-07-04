@@ -8,7 +8,7 @@ var player_stats = { "player_hp": 7, "attak_damage": 40,
 var dash_fill_amount := 0.0
 var dash_cooldown := 0.0
 var is_attacking := false
-var dash_timer := 0.2
+var dash_timer := 0.0
 func _physics_process(delta: float) -> void:
 	if dash_timer > 0.0:
 		dash_timer -= delta
@@ -21,13 +21,13 @@ func _physics_process(delta: float) -> void:
 		return
 	if dash_cooldown > 0.0:
 		dash_cooldown -= delta
-		var current_frame = int((3.0 - dash_cooldown) / 3.0 * 10)
+		var current_frame = int((2.0 - dash_cooldown) / 2.0 * 10)
 		UI.get_node("Dash").frame = current_frame
 		if dash_cooldown <= 0.0:
 			dash_cooldown = 0.0
 	if not is_on_floor():
 		velocity += get_gravity() * 0.5 * delta
-		if is_attacking == false:
+		if is_attacking == false and dash_timer <= 0:
 			$AnimatedSprite2D.play("jamp")
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and is_attacking == false:
 		velocity.y = JUMP_VELOCITY
@@ -51,7 +51,8 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("walk")
 	if Input.is_action_just_pressed("dash") and dash_cooldown == 0.0:
 		$AnimatedSprite2D.play("dash")
-		dash_cooldown = 3.0
+		dash_cooldown = 2.0
+		dash_timer = 0.2
 	move_and_slide()
 	attak()
 
@@ -65,8 +66,29 @@ func attak() -> void:
 		
 func get_damage() -> void:
 	player_stats["player_hp"] -= 1
-	
+	update_hearts()
+func death() -> void:
+	if player_stats["player_hp"] <= 0:
+		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	$Area2D/AnimatedSprite2D.visible = false
-	is_attacking = false
+	if $AnimatedSprite2D.animation == "attak":
+		$Area2D/CollisionShape2D.disabled = true
+		$Area2D/AnimatedSprite2D.visible = false
+		is_attacking = false
+func update_hearts() -> void:
+	for i in range(1, 8):
+		var heart = UI.get_node("Heart" + str(i))
+		if i <= player_stats["player_hp"]:
+			heart.frame = 1
+			await get_tree().create_timer(0.02).timeout
+			heart.frame = 0
+		else:
+			heart.frame = 1
+			await get_tree().create_timer(0.02).timeout
+			heart.frame = 2
+	death()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	get_damage()

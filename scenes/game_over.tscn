@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bkwrhl3rf6ym0"]
+
+[ext_resource type="Script" uid="uid://brjtfpsths36k" path="res://scenes/game_over.gd" id="1_xeevv"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_g4v7s"]
+size = Vector2(100, 20)
+
+[node name="Game_Over" type="Control" unique_id=2029099330]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xeevv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=140965255]
+layout_mode = 0
+offset_right = 319.0
+offset_bottom = 179.0
+color = Color(0.52711636, 0.01854989, 0.04428622, 0.85490197)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1944111803]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -20.0
+offset_right = 22.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 110
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1636188557]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Game Over"
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer" unique_id=511955803]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = SubResource("PlaceholderTexture2D_g4v7s")
+
+[connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]

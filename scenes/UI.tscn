@@ -58,26 +58,27 @@ animations = [{
 script = ExtResource("1_7paak")
 
 [node name="Heart1" parent="." unique_id=1320991527 instance=ExtResource("1_0gp8r")]
-position = Vector2(58, 4)
+position = Vector2(4, 4)
 
 [node name="Heart2" parent="." unique_id=1129201265 instance=ExtResource("1_0gp8r")]
-position = Vector2(49, 4)
+position = Vector2(13, 4)
 
 [node name="Heart3" parent="." unique_id=1907612080 instance=ExtResource("1_0gp8r")]
-position = Vector2(40, 4)
+position = Vector2(22, 4)
 
 [node name="Heart4" parent="." unique_id=1794187259 instance=ExtResource("1_0gp8r")]
 position = Vector2(31, 4)
 
 [node name="Heart5" parent="." unique_id=1991494315 instance=ExtResource("1_0gp8r")]
-position = Vector2(22, 4)
+position = Vector2(40, 4)
 
 [node name="Heart6" parent="." unique_id=1684122208 instance=ExtResource("1_0gp8r")]
-position = Vector2(13, 4)
+position = Vector2(49, 4)
 
 [node name="Heart7" parent="." unique_id=1674781179 instance=ExtResource("1_0gp8r")]
-position = Vector2(4, 4)
+position = Vector2(58, 4)
 
 [node name="Dash" type="AnimatedSprite2D" parent="." unique_id=1111533991]
 position = Vector2(10, 14)
 sprite_frames = SubResource("SpriteFrames_yf5fn")
+frame = 10

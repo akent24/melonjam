@@ -145,9 +145,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_odhlk")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"attak",
-"speed": 15.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -162,9 +162,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_siqv6")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"dash",
-"speed": 5.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -247,6 +247,7 @@ animation = &"dash"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=646755071]
 offset = Vector2(-0.01, 1.995)
+process_callback = 0
 limit_enabled = false
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
