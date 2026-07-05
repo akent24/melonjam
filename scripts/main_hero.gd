@@ -49,13 +49,12 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("idle")
 		else:
 			$AnimatedSprite2D.play("walk")
-	if Input.is_action_just_pressed("dash") and dash_cooldown == 0.0:
+	if Input.is_action_just_pressed("dash") and dash_cooldown == 0.0 and is_attacking == false:
 		$AnimatedSprite2D.play("dash")
-		dash_cooldown = 2.0
+		dash_cooldown = 1.8
 		dash_timer = 0.2
 	move_and_slide()
 	attak()
-
 func attak() -> void:
 	if Input.is_action_just_pressed("attak"):
 		is_attacking = true
@@ -63,14 +62,12 @@ func attak() -> void:
 		$Area2D/AnimatedSprite2D.visible = true
 		$Area2D/AnimatedSprite2D.play("attak")
 		$Area2D/CollisionShape2D.disabled = false
-		
-func get_damage() -> void:
-	player_stats["player_hp"] -= 1
+func get_damage(amount: int) -> void:
+	player_stats["player_hp"] -= amount
 	update_hearts()
 func death() -> void:
 	if player_stats["player_hp"] <= 0:
 		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
-
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "attak":
 		$Area2D/CollisionShape2D.disabled = true
@@ -80,15 +77,11 @@ func update_hearts() -> void:
 	for i in range(1, 8):
 		var heart = UI.get_node("Heart" + str(i))
 		if i <= player_stats["player_hp"]:
-			heart.frame = 1
-			await get_tree().create_timer(0.02).timeout
 			heart.frame = 0
+			heart.offset.y = 0
 		else:
 			heart.frame = 1
-			await get_tree().create_timer(0.02).timeout
+			heart.offset.y = 1
+			await get_tree().create_timer(0.01).timeout
 			heart.frame = 2
 	death()
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	get_damage()

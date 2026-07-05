@@ -162,7 +162,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_siqv6")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"dash",
 "speed": 13.0
 }, {

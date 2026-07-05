@@ -211,4 +211,6 @@ sprite_frames = SubResource("SpriteFrames_yf5fn")
 frame = 2
 frame_progress = 0.31626555
 
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=192178933]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
