@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bkwrhl3rf6ym0"]
 
-[ext_resource type="Script" uid="uid://brjtfpsths36k" path="res://scenes/game_over.gd" id="1_xeevv"]
+[ext_resource type="Script" uid="uid://brjtfpsths36k" path="res://scripts/game_over.gd" id="1_xeevv"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_g4v7s"]
 size = Vector2(100, 20)
