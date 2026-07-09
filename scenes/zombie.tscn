@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://clrcpra82ljmt" path="res://assets/sprites/zombattak.png" id="5_aetfh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(11, 16)
+size = Vector2(10.58201, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjlcg"]
 atlas = ExtResource("1_ycv6i")
@@ -146,7 +146,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(9, 8)
+size = Vector2(8.5, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r6vye"]
 atlas = ExtResource("5_aetfh")
@@ -188,7 +188,8 @@ animations = [{
 script = ExtResource("1_pjjxt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=483218603]
-position = Vector2(0.5, 0)
+position = Vector2(1, 0)
+scale = Vector2(0.945, 1)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1897560488]
@@ -196,16 +197,15 @@ sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"idle"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=817110778]
+position = Vector2(-8, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=778893527]
-position = Vector2(-9.235, -0.08)
 scale = Vector2(0.94, 1)
 shape = SubResource("RectangleShape2D_yf5fn")
 disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=1604279713]
 visible = false
-position = Vector2(-9.485, 0)
 sprite_frames = SubResource("SpriteFrames_yf5fn")
 frame = 2
 frame_progress = 0.31626555
