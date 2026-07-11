@@ -1,10 +1,11 @@
 extends CharacterBody2D
 @onready var UI = $"../UI"
-const SPEED = 70.0
-const JUMP_VELOCITY = -200.0
-const DASH_SPEED = 200.0
-var player_stats = { "player_hp": 7, "attak_damage": 40, 
+const SPEED := 70.0
+const JUMP_VELOCITY := -200.0
+const DASH_SPEED := 200.0
+var player_stats := { "player_hp": 7, "attak_damage": 40, 
 }
+var inventory := []
 var dash_fill_amount := 0.0
 var dash_cooldown := 0.0
 var is_attacking := false
@@ -78,10 +79,8 @@ func update_hearts() -> void:
 		var heart = UI.get_node("Heart" + str(i))
 		if i <= player_stats["player_hp"]:
 			heart.frame = 0
-			heart.offset.y = 0
 		else:
 			heart.frame = 1
-			heart.offset.y = 1
-			await get_tree().create_timer(0.01).timeout
+			await get_tree().create_timer(0.02).timeout
 			heart.frame = 2
 	death()

@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var speed = 50 
+var speed = 50
 var health = 150
 var is_waiting := false
 var direction = -1
