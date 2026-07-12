@@ -218,7 +218,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=65108906]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=65108906 groups=["player"]]
 script = ExtResource("1_5ryay")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1075785764]
@@ -243,7 +243,7 @@ shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=881094301]
 sprite_frames = SubResource("SpriteFrames_5ryay")
-animation = &"dash"
+animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=646755071]
 offset = Vector2(-0.01, 1.995)
@@ -254,10 +254,10 @@ position_smoothing_speed = 6.0
 rotation_smoothing_speed = 1.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-drag_left_margin = 0.01
-drag_top_margin = 0.01
-drag_right_margin = 0.01
-drag_bottom_margin = 0.01
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
 editor_draw_drag_margin = true
 
 [connection signal="animation_finished" from="Area2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
