@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED := 70.0
 const JUMP_VELOCITY := -200.0
 const DASH_SPEED := 200.0
-var player_stats := { "player_hp": 7, "attak_damage": 40, 
+var player_stats := { "player_hp": 7, "attak_damage": 40
 }
 var inventory := []
 var dash_fill_amount := 0.0
