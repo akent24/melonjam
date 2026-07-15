@@ -106,7 +106,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f78au")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"death",
 "speed": 10.0
 }, {
@@ -194,7 +194,7 @@ shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1897560488]
 sprite_frames = SubResource("SpriteFrames_g4v7s")
-animation = &"idle"
+animation = &"death"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=817110778]
 position = Vector2(-8, 0)
@@ -217,4 +217,5 @@ target_position = Vector2(0, 20)
 [node name="RayCast2D2" type="RayCast2D" parent="." unique_id=1602421935]
 target_position = Vector2(-20, 0)
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -85,4 +85,6 @@ func update_hearts() -> void:
 			heart.frame = 2
 	death()
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass
+	if body.is_in_group("enemy") and body.has_method("take_damage"):
+		body.take_damage(player_stats["attak_damage"])
+		print(body, "just hit")
