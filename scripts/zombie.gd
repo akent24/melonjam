@@ -41,11 +41,13 @@ func not_fall():
 		is_waiting = false
 		direction *= -1
 		if direction == -1:
+			$RayCast2D2.rotate(180)
 			$AnimatedSprite2D.flip_h = false
 			$Area2D/AnimatedSprite2D.flip_h = false
 			$Area2D/CollisionShape2D.position.x = -8
 			$RayCast2D.position.x = -15
 		else:
+			$RayCast2D2.rotate(180)
 			$AnimatedSprite2D.flip_h = true
 			$Area2D/AnimatedSprite2D.flip_h = true
 			$Area2D/CollisionShape2D.position.x = 10
@@ -64,3 +66,19 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		queue_free()
 	else:
 		return
+func dont_bump() -> void:
+	var HColliding = $RayCast2D2.is_colliding()
+	if HColliding == true and is_waiting == false:
+		direction *= -1
+		if direction == -1:
+			$RayCast2D2.rotate(180)
+			$AnimatedSprite2D.flip_h = false
+			$Area2D/AnimatedSprite2D.flip_h = false
+			$Area2D/CollisionShape2D.position.x = -8
+			$RayCast2D.position.x = -15
+		else:
+			$RayCast2D2.rotate(180)
+			$AnimatedSprite2D.flip_h = true
+			$Area2D/AnimatedSprite2D.flip_h = true
+			$Area2D/CollisionShape2D.position.x = 10
+			$RayCast2D.position.x = 15

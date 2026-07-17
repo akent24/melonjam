@@ -1,8 +1,45 @@
 [gd_scene format=3 uid="uid://t4v4mr1aav5i"]
 
+[ext_resource type="Texture2D" uid="uid://bcjjpjndsob0m" path="res://assets/sprites/hero-idle.png" id="1_ideak"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxcha"]
+atlas = ExtResource("1_ideak")
+region = Rect2(0, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh24r"]
+atlas = ExtResource("1_ideak")
+region = Rect2(12, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul7y6"]
+atlas = ExtResource("1_ideak")
+region = Rect2(24, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc6q4"]
+atlas = ExtResource("1_ideak")
+region = Rect2(36, 0, 12, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_e1g08"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxcha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kh24r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ul7y6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc6q4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fxol8"]
+size = Vector2(11, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1g08"]
 size = Vector2(73, 34)
@@ -13,10 +50,11 @@ size = Vector2(73, 34)
 sprite_frames = SubResource("SpriteFrames_e1g08")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=891858854]
+position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_fxol8")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=371751834]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=598343413]
-position = Vector2(-0.5, -7)
+position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_e1g08")
