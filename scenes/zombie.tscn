@@ -185,6 +185,8 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1177770066 groups=["enemy"]]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_pjjxt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=483218603]
@@ -216,7 +218,7 @@ target_position = Vector2(0, 20)
 
 [node name="RayCast2D2" type="RayCast2D" parent="." unique_id=1602421935]
 target_position = Vector2(-18, 0)
-collision_mask = 4
+collision_mask = 2
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

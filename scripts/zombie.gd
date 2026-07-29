@@ -14,12 +14,11 @@ func _physics_process(delta: float) -> void: #Крч здесь все функ�
 		if is_waiting == false:
 			walk(delta)
 		not_fall()
+		dont_bump()
 	else:
 		return
 func walk(delta: float) -> void: #Здесь ходит он крч
-	if is_waiting == true:
-		return
-	if is_dead == true:
+	if is_waiting == true or is_dead == true:
 		return
 	else:
 		$AnimatedSprite2D.play("walk")
