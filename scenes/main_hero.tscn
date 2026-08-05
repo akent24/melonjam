@@ -48,7 +48,7 @@ animations = [{
 size = Vector2(25.160599, 18.08081)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(5.325, 13.5)
+size = Vector2(5.325, 14.75)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_48krb"]
 atlas = ExtResource("2_lrk6v")
@@ -241,6 +241,7 @@ shape = SubResource("RectangleShape2D_yf5fn")
 disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1283509031]
+position = Vector2(0, 0.625)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=881094301]

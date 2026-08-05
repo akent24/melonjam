@@ -146,7 +146,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(8.5, 8)
+size = Vector2(7.441489, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r6vye"]
 atlas = ExtResource("5_aetfh")
@@ -202,6 +202,7 @@ animation = &"idle"
 position = Vector2(-8, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=778893527]
+position = Vector2(0.49749994, 0)
 scale = Vector2(0.94, 1)
 shape = SubResource("RectangleShape2D_yf5fn")
 disabled = true
@@ -217,7 +218,7 @@ position = Vector2(-15, -10)
 target_position = Vector2(0, 20)
 
 [node name="RayCast2D2" type="RayCast2D" parent="." unique_id=1602421935]
-target_position = Vector2(-18, 0)
+target_position = Vector2(-16, 0)
 collision_mask = 2
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

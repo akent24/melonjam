@@ -144,6 +144,7 @@ tile_set = SubResource("TileSet_g4v7s")
 
 [node name="Walls layer" type="TileMapLayer" parent="." unique_id=137994647]
 tile_map_data = PackedByteArray("AAAwAA4AAAAAAAAAAAAwAA8AAAAAAAAAAAAwABAAAAAAAAAAAAAwABEAAAAAAAAAAAAwABIAAAAAAAAAAAAeAA4AAAAAAAAAAAAeAA8AAAAAAAAAAAAeABAAAAAAAAAAAAAeABEAAAAAAAAAAAAeABIAAAAAAAAAAAA=")
+enabled = false
 tile_set = SubResource("TileSet_fxol8")
 
 [node name="DecorLayer" type="TileMapLayer" parent="." unique_id=1444436285]
